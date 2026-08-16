@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="E-commerce website design mockup">
+  <defs>
+    <linearGradient id="ec-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c1226"/>
+      <stop offset="100%" stop-color="#231038"/>
+    </linearGradient>
+    <linearGradient id="ec-acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3ac7ff"/>
+      <stop offset="100%" stop-color="#7c6bff"/>
+    </linearGradient>
+    <radialGradient id="ec-glow">
+      <stop offset="0%" stop-color="#7c6bff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c6bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#ec-bg)"/>
+  <circle cx="660" cy="90" r="230" fill="url(#ec-glow)"/>
+
+  <!-- Browser window -->
+  <g transform="translate(54 52)">
+    <rect x="0" y="0" width="588" height="396" rx="16" fill="#111730" stroke="#2a3050" stroke-width="1.5"/>
+
+    <!-- Chrome bar -->
+    <rect x="0" y="0" width="588" height="36" rx="16" fill="#161c38"/>
+    <rect x="0" y="24" width="588" height="12" fill="#161c38"/>
+    <circle cx="22" cy="18" r="5" fill="#ff5f57"/>
+    <circle cx="40" cy="18" r="5" fill="#febc2e"/>
+    <circle cx="58" cy="18" r="5" fill="#28c840"/>
+    <rect x="82" y="10" width="300" height="16" rx="8" fill="#0e1430"/>
+    <text x="96" y="22" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#5c6488">nova-store.design</text>
+
+    <!-- Site nav -->
+    <text x="26" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#f4f4f7">NOVA</text>
+    <rect x="86" y="59" width="34" height="6" rx="3" fill="#333b60"/>
+    <rect x="130" y="59" width="34" height="6" rx="3" fill="#333b60"/>
+    <rect x="174" y="59" width="34" height="6" rx="3" fill="#333b60"/>
+    <rect x="482" y="53" width="80" height="20" rx="10" fill="url(#ec-acc)"/>
+    <text x="522" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#08111f">Cart · 3</text>
+
+    <!-- Hero banner -->
+    <rect x="26" y="86" width="536" height="104" rx="14" fill="#18203f"/>
+    <rect x="26" y="86" width="268" height="104" rx="14" fill="url(#ec-acc)" opacity="0.14"/>
+    <text x="50" y="124" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#f4f4f7">Autumn Collection</text>
+    <text x="50" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b90a8">Up to 40% off selected pieces</text>
+    <rect x="50" y="156" width="86" height="22" rx="11" fill="url(#ec-acc)"/>
+    <text x="93" y="171" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#08111f">Shop now</text>
+    <circle cx="470" cy="138" r="42" fill="#7c6bff" opacity="0.25"/>
+    <circle cx="502" cy="120" r="24" fill="#3ac7ff" opacity="0.3"/>
+
+    <!-- Filter chips -->
+    <rect x="26" y="206" width="52" height="18" rx="9" fill="url(#ec-acc)"/>
+    <rect x="86" y="206" width="46" height="18" rx="9" fill="#1c2444"/>
+    <rect x="140" y="206" width="58" height="18" rx="9" fill="#1c2444"/>
+    <rect x="206" y="206" width="44" height="18" rx="9" fill="#1c2444"/>
+
+    <!-- Product grid -->
+    <g>
+      <rect x="26" y="238" width="126" height="134" rx="12" fill="#161d3a" stroke="#252d52" stroke-width="1"/>
+      <rect x="36" y="248" width="106" height="72" rx="9" fill="#212a52"/>
+      <circle cx="89" cy="284" r="22" fill="#3ac7ff" opacity="0.32"/>
+      <rect x="36" y="330" width="70" height="7" rx="3.5" fill="#3a4370"/>
+      <rect x="36" y="344" width="42" height="6" rx="3" fill="#2a3157"/>
+      <text x="142" y="351" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f4f4f7">₹2,199</text>
+
+      <rect x="164" y="238" width="126" height="134" rx="12" fill="#161d3a" stroke="#252d52" stroke-width="1"/>
+      <rect x="174" y="248" width="106" height="72" rx="9" fill="#212a52"/>
+      <rect x="205" y="266" width="44" height="36" rx="8" fill="#7c6bff" opacity="0.4"/>
+      <rect x="174" y="330" width="60" height="7" rx="3.5" fill="#3a4370"/>
+      <rect x="174" y="344" width="38" height="6" rx="3" fill="#2a3157"/>
+      <text x="280" y="351" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f4f4f7">₹1,450</text>
+
+      <rect x="302" y="238" width="126" height="134" rx="12" fill="#161d3a" stroke="#3ac7ff" stroke-width="1.4"/>
+      <rect x="312" y="248" width="106" height="72" rx="9" fill="#212a52"/>
+      <path d="M347 302l18-30 18 30z" fill="#3ac7ff" opacity="0.42"/>
+      <rect x="312" y="330" width="74" height="7" rx="3.5" fill="#3a4370"/>
+      <rect x="312" y="344" width="34" height="6" rx="3" fill="#2a3157"/>
+      <text x="418" y="351" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f4f4f7">₹3,090</text>
+
+      <rect x="440" y="238" width="122" height="134" rx="12" fill="#161d3a" stroke="#252d52" stroke-width="1"/>
+      <rect x="450" y="248" width="102" height="72" rx="9" fill="#212a52"/>
+      <circle cx="501" cy="284" r="20" stroke="#7c6bff" stroke-width="5" fill="none" opacity="0.5"/>
+      <rect x="450" y="330" width="56" height="7" rx="3.5" fill="#3a4370"/>
+      <rect x="450" y="344" width="40" height="6" rx="3" fill="#2a3157"/>
+      <text x="552" y="351" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f4f4f7">₹899</text>
+    </g>
+  </g>
+
+  <!-- Floating mobile view -->
+  <g transform="translate(596 214)">
+    <rect x="0" y="0" width="140" height="238" rx="24" fill="#12183a" stroke="#2f3766" stroke-width="1.5"/>
+    <rect x="7" y="7" width="126" height="224" rx="18" fill="#0e1430"/>
+    <rect x="54" y="16" width="32" height="4" rx="2" fill="#2f3766"/>
+    <rect x="18" y="34" width="104" height="58" rx="10" fill="url(#ec-acc)" opacity="0.22"/>
+    <rect x="18" y="102" width="48" height="60" rx="9" fill="#1c2447"/>
+    <rect x="74" y="102" width="48" height="60" rx="9" fill="#1c2447"/>
+    <rect x="18" y="172" width="48" height="46" rx="9" fill="#1c2447"/>
+    <rect x="74" y="172" width="48" height="46" rx="9" fill="#1c2447"/>
+  </g>
+
+  <text x="54" y="474" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8b90a8">E-Commerce website · responsive UI/UX design</text>
+</svg>

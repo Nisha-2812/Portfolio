@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Sales data analysis dashboard mockup">
+  <defs>
+    <linearGradient id="sa-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1626"/>
+      <stop offset="100%" stop-color="#132b45"/>
+    </linearGradient>
+    <linearGradient id="sa-acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3ac7ff"/>
+      <stop offset="100%" stop-color="#7c6bff"/>
+    </linearGradient>
+    <linearGradient id="sa-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3ac7ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3ac7ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sa-bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#3ac7ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7c6bff"/>
+    </linearGradient>
+    <radialGradient id="sa-glow">
+      <stop offset="0%" stop-color="#3ac7ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3ac7ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sa-bg)"/>
+  <circle cx="690" cy="80" r="210" fill="url(#sa-glow)"/>
+  <circle cx="90" cy="440" r="190" fill="url(#sa-glow)"/>
+
+  <g transform="translate(40 34)">
+    <rect x="0" y="0" width="720" height="432" rx="20" fill="#0f2036" stroke="#25405f" stroke-width="1.5"/>
+
+    <text x="28" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#f2f7ff">Sales Performance Dashboard</text>
+    <text x="28" y="62" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#7f95b5">Revenue, region &amp; product drill-down · Power BI + SQL</text>
+    <rect x="566" y="26" width="56" height="24" rx="12" fill="#17304d"/>
+    <text x="594" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#8fb4dc">FY 2024</text>
+    <rect x="632" y="26" width="60" height="24" rx="12" fill="url(#sa-acc)"/>
+    <text x="662" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#06131f">Filter</text>
+
+    <!-- KPI row -->
+    <g>
+      <rect x="28" y="80" width="156" height="68" rx="14" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="44" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7f95b5">Total revenue</text>
+      <text x="44" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f2f7ff">₹4.82Cr</text>
+      <text x="126" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 12%</text>
+
+      <rect x="196" y="80" width="156" height="68" rx="14" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="212" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7f95b5">Orders</text>
+      <text x="212" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f2f7ff">28,940</text>
+      <text x="300" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 6.5%</text>
+
+      <rect x="364" y="80" width="156" height="68" rx="14" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="380" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7f95b5">Profit margin</text>
+      <text x="380" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f2f7ff">21.4%</text>
+      <text x="456" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 2.0%</text>
+
+      <rect x="532" y="80" width="160" height="68" rx="14" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="548" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7f95b5">Returns</text>
+      <text x="548" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f2f7ff">3.2%</text>
+      <text x="612" y="127" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#f87171">▲ 0.4%</text>
+    </g>
+
+    <!-- Line/area chart -->
+    <g transform="translate(28 164)">
+      <rect x="0" y="0" width="428" height="240" rx="16" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="20" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#f2f7ff">Monthly revenue trend</text>
+      <text x="408" y="28" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 12% YoY</text>
+
+      <line x1="24" y1="196" x2="408" y2="196" stroke="#2b4a6d" stroke-width="1"/>
+      <line x1="24" y1="152" x2="408" y2="152" stroke="#1f3a58" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="24" y1="108" x2="408" y2="108" stroke="#1f3a58" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="24" y1="64" x2="408" y2="64" stroke="#1f3a58" stroke-width="1" stroke-dasharray="3 4"/>
+
+      <path d="M24 168 L60 150 L96 158 L132 124 L168 132 L204 96 L240 104 L276 74 L312 86 L348 58 L384 66 L408 48 L408 196 L24 196 Z" fill="url(#sa-area)"/>
+      <path d="M24 168 L60 150 L96 158 L132 124 L168 132 L204 96 L240 104 L276 74 L312 86 L348 58 L384 66 L408 48" fill="none" stroke="#3ac7ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <circle cx="204" cy="96" r="4" fill="#0f2036" stroke="#3ac7ff" stroke-width="2.5"/>
+      <circle cx="348" cy="58" r="4" fill="#0f2036" stroke="#3ac7ff" stroke-width="2.5"/>
+      <circle cx="408" cy="48" r="5" fill="#3ac7ff"/>
+
+      <g font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#5f7c9d">
+        <text x="24" y="214">Apr</text><text x="96" y="214">Jun</text><text x="168" y="214">Aug</text>
+        <text x="240" y="214">Oct</text><text x="312" y="214">Dec</text><text x="384" y="214">Feb</text>
+      </g>
+    </g>
+
+    <!-- Region breakdown -->
+    <g transform="translate(476 164)">
+      <rect x="0" y="0" width="216" height="240" rx="16" fill="#15293f" stroke="#25405f" stroke-width="1"/>
+      <text x="20" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#f2f7ff">Revenue by region</text>
+
+      <g font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#8fb4dc">
+        <text x="20" y="58">North</text>
+        <rect x="20" y="64" width="176" height="9" rx="4.5" fill="#1f3a58"/>
+        <rect x="20" y="64" width="150" height="9" rx="4.5" fill="url(#sa-bar)"/>
+        <text x="196" y="58" text-anchor="end" fill="#f2f7ff" font-weight="600">₹1.6Cr</text>
+
+        <text x="20" y="98">West</text>
+        <rect x="20" y="104" width="176" height="9" rx="4.5" fill="#1f3a58"/>
+        <rect x="20" y="104" width="122" height="9" rx="4.5" fill="url(#sa-bar)"/>
+        <text x="196" y="98" text-anchor="end" fill="#f2f7ff" font-weight="600">₹1.3Cr</text>
+
+        <text x="20" y="138">South</text>
+        <rect x="20" y="144" width="176" height="9" rx="4.5" fill="#1f3a58"/>
+        <rect x="20" y="144" width="94" height="9" rx="4.5" fill="url(#sa-bar)"/>
+        <text x="196" y="138" text-anchor="end" fill="#f2f7ff" font-weight="600">₹1.0Cr</text>
+
+        <text x="20" y="178">East</text>
+        <rect x="20" y="184" width="176" height="9" rx="4.5" fill="#1f3a58"/>
+        <rect x="20" y="184" width="66" height="9" rx="4.5" fill="url(#sa-bar)"/>
+        <text x="196" y="178" text-anchor="end" fill="#f2f7ff" font-weight="600">₹0.9Cr</text>
+      </g>
+
+      <rect x="20" y="206" width="176" height="1" fill="#25405f"/>
+      <text x="20" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7f95b5">Top product</text>
+      <text x="196" y="226" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#3ac7ff">Aurora X1</text>
+    </g>
+  </g>
+</svg>

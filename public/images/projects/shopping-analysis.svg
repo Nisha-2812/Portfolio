@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Customer shopping behaviour analysis dashboard mockup">
+  <defs>
+    <linearGradient id="sh-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12102a"/>
+      <stop offset="100%" stop-color="#241241"/>
+    </linearGradient>
+    <linearGradient id="sh-acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c6bff"/>
+      <stop offset="100%" stop-color="#3ac7ff"/>
+    </linearGradient>
+    <linearGradient id="sh-bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7c6bff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3ac7ff"/>
+    </linearGradient>
+    <radialGradient id="sh-glow">
+      <stop offset="0%" stop-color="#7c6bff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c6bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sh-bg)"/>
+  <circle cx="120" cy="70" r="200" fill="url(#sh-glow)"/>
+  <circle cx="700" cy="430" r="200" fill="url(#sh-glow)"/>
+
+  <!-- Dashboard panel -->
+  <g transform="translate(40 34)">
+    <rect x="0" y="0" width="720" height="432" rx="20" fill="#171233" stroke="#332a5c" stroke-width="1.5"/>
+
+    <!-- Header -->
+    <text x="28" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#f4f4f7">Customer Shopping Behaviour</text>
+    <text x="28" y="62" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#948bbd">Segmentation &amp; retention · Power BI</text>
+    <rect x="560" y="26" width="60" height="24" rx="12" fill="#221a45"/>
+    <text x="590" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#a99fd6">Last 12 mo</text>
+    <rect x="630" y="26" width="62" height="24" rx="12" fill="url(#sh-acc)"/>
+    <text x="661" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#0b0820">Export</text>
+
+    <!-- KPI tiles -->
+    <g>
+      <rect x="28" y="80" width="156" height="70" rx="14" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="44" y="103" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#948bbd">Total customers</text>
+      <text x="44" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#f4f4f7">12,480</text>
+      <text x="118" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 8.4%</text>
+
+      <rect x="196" y="80" width="156" height="70" rx="14" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="212" y="103" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#948bbd">Avg order value</text>
+      <text x="212" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#f4f4f7">₹2,140</text>
+      <text x="292" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#34d399">▲ 3.1%</text>
+
+      <rect x="364" y="80" width="156" height="70" rx="14" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="380" y="103" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#948bbd">Repeat rate</text>
+      <text x="380" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#f4f4f7">38.6%</text>
+      <text x="452" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#f87171">▼ 1.2%</text>
+
+      <rect x="532" y="80" width="160" height="70" rx="14" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="548" y="103" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#948bbd">Churn risk</text>
+      <text x="548" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#f4f4f7">1,204</text>
+      <text x="616" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#fbbf24">● High</text>
+    </g>
+
+    <!-- Bar chart: purchases by category -->
+    <g transform="translate(28 166)">
+      <rect x="0" y="0" width="404" height="238" rx="16" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="20" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#f4f4f7">Purchases by category</text>
+
+      <line x1="20" y1="196" x2="384" y2="196" stroke="#3a3068" stroke-width="1"/>
+      <line x1="20" y1="152" x2="384" y2="152" stroke="#2b2352" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="20" y1="108" x2="384" y2="108" stroke="#2b2352" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="20" y1="64" x2="384" y2="64" stroke="#2b2352" stroke-width="1" stroke-dasharray="3 4"/>
+
+      <rect x="34" y="96" width="30" height="100" rx="6" fill="url(#sh-bar)"/>
+      <rect x="82" y="66" width="30" height="130" rx="6" fill="url(#sh-bar)"/>
+      <rect x="130" y="120" width="30" height="76" rx="6" fill="url(#sh-bar)"/>
+      <rect x="178" y="52" width="30" height="144" rx="6" fill="url(#sh-bar)"/>
+      <rect x="226" y="110" width="30" height="86" rx="6" fill="url(#sh-bar)"/>
+      <rect x="274" y="140" width="30" height="56" rx="6" fill="url(#sh-bar)"/>
+      <rect x="322" y="86" width="30" height="110" rx="6" fill="url(#sh-bar)"/>
+
+      <text x="49" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Fashion</text>
+      <text x="97" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Tech</text>
+      <text x="145" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Home</text>
+      <text x="193" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Beauty</text>
+      <text x="241" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Sports</text>
+      <text x="289" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Books</text>
+      <text x="337" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#7d74a8">Grocery</text>
+    </g>
+
+    <!-- Donut: RFM segments -->
+    <g transform="translate(452 166)">
+      <rect x="0" y="0" width="240" height="238" rx="16" fill="#1e1840" stroke="#332a5c" stroke-width="1"/>
+      <text x="20" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#f4f4f7">RFM segments</text>
+
+      <g transform="translate(120 118)">
+        <circle r="52" fill="none" stroke="#2b2352" stroke-width="20"/>
+        <circle r="52" fill="none" stroke="#3ac7ff" stroke-width="20" stroke-dasharray="118 209" transform="rotate(-90)"/>
+        <circle r="52" fill="none" stroke="#7c6bff" stroke-width="20" stroke-dasharray="82 245" transform="rotate(40)"/>
+        <circle r="52" fill="none" stroke="#34d399" stroke-width="20" stroke-dasharray="52 275" transform="rotate(130)"/>
+        <text y="-2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#f4f4f7">4</text>
+        <text y="16" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#948bbd">segments</text>
+      </g>
+
+      <g font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#a99fd6">
+        <circle cx="30" cy="200" r="4.5" fill="#3ac7ff"/><text x="42" y="203">Champions</text>
+        <circle cx="132" cy="200" r="4.5" fill="#7c6bff"/><text x="144" y="203">Loyal</text>
+        <circle cx="30" cy="220" r="4.5" fill="#34d399"/><text x="42" y="223">Promising</text>
+        <circle cx="132" cy="220" r="4.5" fill="#2b2352"/><text x="144" y="223">At risk</text>
+      </g>
+    </g>
+  </g>
+</svg>
