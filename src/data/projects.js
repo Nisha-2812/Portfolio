@@ -75,7 +75,7 @@ export const projects = [
     image: "/images/projects/customer-shopping-behavior.png",
     technologies: ["Python", "Pandas", "PostgreSQL", "Power BI"],
     links: [
-      { label: "View Dashboard", url: "https://your-dashboard-link.example.com", icon: "chart", primary: true },
+      { label: "View Dashboard", url: "/reports/Customer Shopping Behavior Analysis Report.pdf", icon: "chart", primary: true },
     ],
   },
   {
