@@ -1,41 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #05050a;
-  --bg-secondary: #0b0b16;
-  --surface: rgba(255, 255, 255, 0.045);
-  --surface-strong: rgba(255, 255, 255, 0.07);
-  --border-soft: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --text-primary: #f4f4f7;
-  --text-secondary: #9295a6;
-  --text-tertiary: #62667a;
-  --accent-blue: #3ac7ff;
-  --accent-purple: #7c6bff;
-  --accent-gradient: linear-gradient(135deg, #3ac7ff 0%, #7c6bff 100%);
+  --bg-primary: #000000;
+  --bg-secondary: #14213D;
+  --surface: rgba(20, 33, 61, 0.5);
+  --surface-strong: #14213D;
+  --border-soft: rgba(229, 229, 229, 0.15);
+  --border-strong: rgba(229, 229, 229, 0.3);
+  --text-primary: #FFFFFF;
+  --text-secondary: #E5E5E5;
+  --text-tertiary: rgba(229, 229, 229, 0.5);
+  --accent-blue: #FCA311;
+  --accent-purple: #E5E5E5;
+  --accent-gradient: linear-gradient(135deg, #FCA311 0%, #14213D 100%);
   --shadow-color: 0deg 0% 0%;
-  --scrollbar-track: rgba(255, 255, 255, 0.04);
-  --grid-dot: rgba(255, 255, 255, 0.32);
+  --scrollbar-track: #000000;
+  --grid-dot: rgba(252, 163, 17, 0.25);
   color-scheme: dark;
 }
 
 html.light {
-  --bg-primary: #fbfbfd;
-  --bg-secondary: #f1f1f7;
-  --surface: rgba(20, 20, 40, 0.035);
-  --surface-strong: rgba(20, 20, 40, 0.06);
-  --border-soft: rgba(20, 20, 40, 0.09);
-  --border-strong: rgba(20, 20, 40, 0.16);
-  --text-primary: #121218;
-  --text-secondary: #55586b;
-  --text-tertiary: #83869a;
-  --accent-blue: #0ea5e9;
-  --accent-purple: #6d5ef7;
-  --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6d5ef7 100%);
-  --scrollbar-track: rgba(20, 20, 40, 0.04);
-  --grid-dot: rgba(20, 20, 40, 0.28);
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #E5E5E5;
+  --surface: rgba(229, 229, 229, 0.6);
+  --surface-strong: #E5E5E5;
+  --border-soft: rgba(20, 33, 61, 0.15);
+  --border-strong: rgba(20, 33, 61, 0.3);
+  --text-primary: #000000;
+  --text-secondary: #14213D;
+  --text-tertiary: rgba(20, 33, 61, 0.6);
+  --accent-blue: #FCA311;
+  --accent-purple: #14213D;
+  --accent-gradient: linear-gradient(135deg, #FCA311 0%, #14213D 100%);
+  --shadow-color: 0deg 0% 60%;
+  --scrollbar-track: #E5E5E5;
+  --grid-dot: rgba(252, 163, 17, 0.15);
   color-scheme: light;
 }
+
 
 * {
   box-sizing: border-box;
@@ -67,8 +69,8 @@ section {
 }
 
 ::selection {
-  background: var(--accent-purple);
-  color: #ffffff;
+  background: var(--accent-blue);
+  color: #000000;
 }
 
 ::-webkit-scrollbar {

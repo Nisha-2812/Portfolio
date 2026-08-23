@@ -5,8 +5,82 @@ import { fadeLeft, fadeRight, fadeUp, staggerContainer, viewportOnce } from "../
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2 md:gap-14 md:px-10">
+    <section id="about" className="relative py-24 md:py-32" style={{ background: "var(--bg-primary)" }}>
+      {/* Creative Universe / Digital Garden Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Soft Teal Atmospheric Lighting */}
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] rounded-full blur-[150px] mix-blend-screen opacity-40" style={{ background: "var(--accent-blue)" }} />
+        <div className="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] rounded-full blur-[150px] mix-blend-screen opacity-60" style={{ background: "var(--surface-strong)" }} />
+        
+        {/* Organic Curved Lines (SVG) */}
+        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <motion.path
+            d="M-20,80 Q30,120 70,20 T120,40"
+            fill="none"
+            stroke="url(#garden-gradient)"
+            strokeWidth="0.3"
+            animate={{
+              d: [
+                "M-20,80 Q30,120 70,20 T120,40",
+                "M-20,60 Q40,140 80,10 T120,50",
+                "M-20,80 Q30,120 70,20 T120,40"
+              ]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.path
+            d="M-10,30 Q40,-10 80,60 T110,80"
+            fill="none"
+            stroke="var(--accent-blue)"
+            strokeWidth="0.1"
+            animate={{
+              d: [
+                "M-10,30 Q40,-10 80,60 T110,80",
+                "M-10,50 Q20,-20 90,40 T110,70",
+                "M-10,30 Q40,-10 80,60 T110,80"
+              ]
+            }}
+            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <defs>
+            <linearGradient id="garden-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="var(--accent-blue)" stopOpacity="0" />
+              <stop offset="50%" stopColor="var(--accent-blue)" stopOpacity="1" />
+              <stop offset="100%" stopColor="var(--accent-purple)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Floating Interface Fragments & 3D Forms */}
+        <motion.div
+          animate={{ y: [0, 20, 0], rotate: [0, 5, 0], x: [0, 10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/3 right-1/4 w-24 h-16 rounded-xl border backdrop-blur-md shadow-lg flex items-center justify-center"
+          style={{ background: "var(--surface)", borderColor: "var(--border-soft)" }}
+        >
+          <div className="w-12 h-1 rounded-full" style={{ background: "var(--accent-purple)" }} />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -25, 0], rotate: [0, -10, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-1/3 left-1/4 w-32 h-32 rounded-full border backdrop-blur-xl shadow-inner"
+          style={{ background: "var(--surface)", borderColor: "var(--border-strong)" }}
+        />
+
+        {/* Gentle Parallax Particles */}
+        <motion.div 
+          animate={{ y: [0, -100], opacity: [0, 1, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-0 left-[20%] w-1.5 h-1.5 rounded-full bg-[#F7D8B9] shadow-[0_0_8px_#F7D8B9]" 
+        />
+        <motion.div 
+          animate={{ y: [0, -120], opacity: [0, 0.8, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 4 }}
+          className="absolute bottom-0 right-[30%] w-2 h-2 rounded-full bg-[#09909D] shadow-[0_0_12px_#09909D]" 
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2 md:gap-14 md:px-10">
         {/* Image travels in from the right, settling on the left */}
         <motion.div
           variants={fadeRight}
@@ -27,7 +101,7 @@ export default function About() {
               style={{ borderColor: "var(--border-soft)" }}
             >
               <img
-                src={profile.profileImage}
+                src={profile.aboutImage}
                 alt={`${profile.name}, UI/UX designer and data analyst`}
                 className="h-full w-full object-cover"
                 loading="lazy"

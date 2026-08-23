@@ -8,8 +8,9 @@ export const profile = {
   location: "Siliguri, India",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
-  resumeUrl: "/resume/Nisha_Rani_Barman_Resume.pdf",
-  profileImage: "/images/profile.svg",
+  resumeUrl: "https://drive.google.com/drive/folders/1nQ5IM41c7fGCnTOXAehBol7eywSOZCaB?usp=drive_link",
+  profileImage: "/images/home-profile.jpeg",
+  aboutImage: "/images/about-profile.jpeg",
   about: [
     "I'm a final-year BTech CSE student at Siliguri Institute of Technology (7th semester, CGPA 7.6), working at the intersection of design and data. As a UI/UX designer, I craft interfaces that feel simple and intentional; as an aspiring data analyst, I dig into numbers to find the story behind them.",
     "My design process starts with research and wireframes in Figma, moves through prototyping and design systems, and ends with pixel-polished, accessible screens — for fintech apps, e-commerce experiences, and healthcare products.",

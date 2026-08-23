@@ -149,27 +149,29 @@ export default function ProjectCard({ project }) {
             return link.primary ? (
               <a
                 key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="group/btn inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-black shadow-lg transition-transform hover:-translate-y-0.5"
+                href={link.disabled ? undefined : link.url}
+                target={link.disabled ? undefined : "_blank"}
+                rel={link.disabled ? undefined : "noreferrer noopener"}
+                className={`group/btn inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-black shadow-lg transition-transform ${link.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:-translate-y-0.5'}`}
                 style={{ background: "var(--accent-gradient)" }}
+                onClick={link.disabled ? (e) => e.preventDefault() : undefined}
               >
                 <Icon aria-hidden="true" />
                 {link.label}
-                <FiArrowUpRight className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                {!link.disabled && <FiArrowUpRight className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />}
               </a>
             ) : (
               <a
                 key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-transform hover:-translate-y-0.5"
+                href={link.disabled ? undefined : link.url}
+                target={link.disabled ? undefined : "_blank"}
+                rel={link.disabled ? undefined : "noreferrer noopener"}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-transform ${link.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:-translate-y-0.5'}`}
                 style={{
                   borderColor: "var(--border-strong)",
                   color: "var(--text-primary)",
                 }}
+                onClick={link.disabled ? (e) => e.preventDefault() : undefined}
               >
                 <Icon aria-hidden="true" />
                 {link.label}

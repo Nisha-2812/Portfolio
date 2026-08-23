@@ -59,28 +59,37 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-50"
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "top-4 px-4 md:px-10" : "top-0"
+      }`}
     >
       <div
-        className="transition-all duration-300"
+        className={`mx-auto max-w-6xl transition-all duration-300 overflow-hidden ${
+          scrolled ? "rounded-full shadow-2xl" : ""
+        }`}
         style={{
           background: scrolled ? "var(--surface)" : "transparent",
-          borderBottom: `1px solid ${scrolled ? "var(--border-soft)" : "transparent"}`,
-          backdropFilter: scrolled ? "blur(16px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+          border: scrolled ? "1px solid var(--border-soft)" : "1px solid transparent",
+          borderBottom: !scrolled ? "1px solid transparent" : undefined,
+          backdropFilter: scrolled ? "blur(20px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
         }}
       >
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-          <a
-            href="#home"
-            className="font-display text-xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
-          >
-            {profile.firstName}
-            <span className="text-gradient">.</span>
-          </a>
+        <nav className="flex items-center justify-between px-6 py-4">
+          {/* Logo (Left) */}
+          <div className="flex flex-1 justify-start">
+            <a
+              href="#home"
+              className="font-display text-xl font-semibold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {profile.firstName}
+              <span className="text-gradient">.</span>
+            </a>
+          </div>
 
-          <div className="hidden items-center gap-1 md:flex">
+          {/* Nav Links (Middle, Desktop) */}
+          <div className="hidden items-center justify-center gap-1 md:flex md:flex-none">
             {NAV_LINKS.map((link) => {
               const isActive = `#${activeId}` === link.href;
               return (
@@ -107,20 +116,20 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <span className="ml-3">
-              <ThemeToggle />
-            </span>
           </div>
 
-          <div className="flex items-center gap-3 md:hidden">
+          {/* Controls (Right) */}
+          <div className="flex flex-1 items-center justify-end gap-3">
             <ThemeToggle />
+            
+            {/* Mobile Menu Button */}
             <button
               type="button"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border text-lg"
+              className="flex h-10 w-10 items-center justify-center rounded-full border text-lg md:hidden"
               style={{
                 borderColor: "var(--border-soft)",
                 color: "var(--text-primary)",
@@ -136,14 +145,18 @@ export default function Navbar() {
         {menuOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: 0, y: -20 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-b md:hidden"
+            className={`md:hidden mx-4 mt-2 rounded-2xl shadow-2xl overflow-hidden border ${
+              scrolled ? "" : "border-t-0 rounded-t-none"
+            }`}
             style={{
-              background: "var(--bg-primary)",
+              background: "var(--surface-strong)",
               borderColor: "var(--border-soft)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
             }}
           >
             <div className="flex flex-col gap-1 px-6 py-4">
