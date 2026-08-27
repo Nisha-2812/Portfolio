@@ -71,12 +71,12 @@ export default function About() {
         <motion.div 
           animate={{ y: [0, -100], opacity: [0, 1, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-[20%] w-1.5 h-1.5 rounded-full bg-[#F7D8B9] shadow-[0_0_8px_#F7D8B9]" 
+          className="absolute bottom-0 left-[20%] w-1.5 h-1.5 rounded-full bg-[#F5DEBC] shadow-[0_0_8px_#F5DEBC]" 
         />
         <motion.div 
           animate={{ y: [0, -120], opacity: [0, 0.8, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 4 }}
-          className="absolute bottom-0 right-[30%] w-2 h-2 rounded-full bg-[#09909D] shadow-[0_0_12px_#09909D]" 
+          className="absolute bottom-0 right-[30%] w-2 h-2 rounded-full bg-[#FF5404] shadow-[0_0_12px_#FF5404]" 
         />
       </div>
 

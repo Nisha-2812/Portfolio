@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiSend, FiCheckCircle, FiAlertCircle, FiLoader } from "react-icons/fi";
+import { FiSend, FiCheckCircle, FiAlertCircle, FiLoader, FiArrowRight } from "react-icons/fi";
 
 const initialValues = { name: "", email: "", project: "", message: "" };
 
@@ -23,10 +23,67 @@ async function submitContactForm(values) {
   return { ok: true };
 }
 
+const InputField = ({ label, name, type = "text", value, error, isFocused, onFocus, onBlur, onChange }) => {
+  const hasValue = value.length > 0;
+  
+  return (
+    <div className="relative mb-5">
+      <label 
+        className={`absolute left-4 transition-all duration-300 pointer-events-none uppercase tracking-wider font-semibold z-10 ${
+          isFocused || hasValue ? "top-2 text-[9px] text-[#FF5404]" : "top-4 text-xs text-white/40"
+        }`}
+      >
+        {label}
+      </label>
+      <input
+        name={name}
+        type={type}
+        value={value}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        className={`w-full bg-[#0A2233]/40 border ${
+          error ? "border-red-500/50" : isFocused ? "border-[#FF5404]/50" : "border-white/10"
+        } rounded-xl px-4 pt-6 pb-2 text-sm text-white outline-none focus:bg-[#0A2233]/60 transition-all backdrop-blur-md`}
+      />
+      {error && <p className="absolute -bottom-4 right-0 text-[10px] text-red-400">{error}</p>}
+    </div>
+  );
+};
+
+const TextAreaField = ({ label, name, value, error, isFocused, onFocus, onBlur, onChange }) => {
+  const hasValue = value.length > 0;
+  
+  return (
+    <div className="relative mb-5">
+      <label 
+        className={`absolute left-4 transition-all duration-300 pointer-events-none uppercase tracking-wider font-semibold z-10 ${
+          isFocused || hasValue ? "top-2 text-[9px] text-[#FF5404]" : "top-4 text-xs text-white/40"
+        }`}
+      >
+        {label}
+      </label>
+      <textarea
+        name={name}
+        rows={4}
+        value={value}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        className={`w-full resize-none bg-[#0A2233]/40 border ${
+          error ? "border-red-500/50" : isFocused ? "border-[#FF5404]/50" : "border-white/10"
+        } rounded-xl px-4 pt-6 pb-2 text-sm text-white outline-none focus:bg-[#0A2233]/60 transition-all backdrop-blur-md`}
+      />
+      {error && <p className="absolute -bottom-4 right-0 text-[10px] text-red-400">{error}</p>}
+    </div>
+  );
+};
+
 export default function ContactForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState("idle"); 
+  const [status, setStatus] = useState("idle");
+  const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,140 +113,116 @@ export default function ContactForm() {
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
-      {/* Decorative Floating Elements */}
-      <motion.div 
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-6 -right-6 text-3xl z-20 pointer-events-none drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
-      >
-        ✨
-      </motion.div>
-      <motion.div 
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-5 -left-8 text-xs font-mono px-4 py-2 bg-[#09909D]/10 text-[#F7D8B9] rounded-full border border-[#09909D]/20 z-20 backdrop-blur-xl shadow-xl"
-      >
-        no boring emails, promise.
-      </motion.div>
+      {/* Soft orange glow entering from the right side */}
+      <div className="absolute top-1/4 -right-12 w-32 h-64 bg-[#FF5404]/20 blur-[60px] pointer-events-none rounded-full z-0" />
 
       <motion.div 
-        className="relative rounded-3xl p-6 sm:p-8 overflow-hidden shadow-2xl"
+        className="relative z-10 rounded-2xl p-6 sm:p-10 shadow-2xl overflow-hidden"
         style={{
-          background: "linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          border: "1px solid rgba(255, 255, 255, 0.08)",
-          boxShadow: "0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05)"
+          background: "linear-gradient(145deg, rgba(10,34,51,0.8) 0%, rgba(10,34,51,0.4) 100%)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderTopColor: "rgba(255,255,255,0.15)",
+          borderLeftColor: "rgba(255,255,255,0.15)",
         }}
       >
-        {/* Chat Interface Header */}
-        <div className="flex items-center gap-3 mb-8 border-b border-white/5 pb-5">
-          <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.5)]" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
-            <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-          </div>
-          <span className="text-xs font-mono text-gray-400 ml-3 flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" /> 
-            New Message
-          </span>
+        {/* Header */}
+        <div className="mb-8">
+          <h3 className="text-[11px] font-mono tracking-widest text-[#FF5404] uppercase mb-2">Start a conversation</h3>
+          <h4 className="text-xl md:text-2xl font-bold text-white tracking-tight">Tell me what you're working on.</h4>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="space-y-5 relative z-10">
-          <div className="flex flex-col sm:flex-row gap-5">
+        <form onSubmit={handleSubmit} noValidate className="relative z-10 flex flex-col">
+          <div className="flex flex-col sm:flex-row gap-0 sm:gap-4">
             <div className="flex-1">
-              <input
-                name="name"
-                type="text"
-                placeholder="Your Name"
+              <InputField 
+                label="Name" 
+                name="name" 
                 value={values.name}
+                error={errors.name}
+                isFocused={focusedField === "name"}
+                onFocus={() => setFocusedField("name")}
+                onBlur={() => setFocusedField(null)}
                 onChange={handleChange}
-                className="w-full bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-[#09909D]/50 focus:bg-black/10 dark:focus:bg-white/[0.06] transition-all"
-                style={{ color: "var(--text-primary)" }}
               />
-              {errors.name && <p className="mt-1.5 text-xs text-red-400 ml-2">{errors.name}</p>}
             </div>
             <div className="flex-1">
-              <input
-                name="email"
-                type="email"
-                placeholder="Email Address"
+              <InputField 
+                label="Email" 
+                name="email" 
+                type="email" 
                 value={values.email}
+                error={errors.email}
+                isFocused={focusedField === "email"}
+                onFocus={() => setFocusedField("email")}
+                onBlur={() => setFocusedField(null)}
                 onChange={handleChange}
-                className="w-full bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-[#09909D]/50 focus:bg-black/10 dark:focus:bg-white/[0.06] transition-all"
-                style={{ color: "var(--text-primary)" }}
               />
-              {errors.email && <p className="mt-1.5 text-xs text-red-400 ml-2">{errors.email}</p>}
             </div>
           </div>
 
-          <div>
-            <input
-              name="project"
-              type="text"
-              placeholder="What are we building?"
-              value={values.project}
-              onChange={handleChange}
-              className="w-full bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-[#09909D]/50 focus:bg-black/10 dark:focus:bg-white/[0.06] transition-all"
-              style={{ color: "var(--text-primary)" }}
-            />
-            {errors.project && <p className="mt-1.5 text-xs text-red-400 ml-2">{errors.project}</p>}
-          </div>
-
-          <div>
-            <textarea
-              name="message"
-              rows={4}
-              placeholder="Type your message here..."
-              value={values.message}
-              onChange={handleChange}
-              className="w-full resize-none bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-[#09909D]/50 focus:bg-black/10 dark:focus:bg-white/[0.06] transition-all"
-              style={{ color: "var(--text-primary)" }}
-            />
-            {errors.message && <p className="mt-1.5 text-xs text-red-400 ml-2">{errors.message}</p>}
-          </div>
+          <InputField 
+            label="Project / Idea" 
+            name="project" 
+            value={values.project}
+            error={errors.project}
+            isFocused={focusedField === "project"}
+            onFocus={() => setFocusedField("project")}
+            onBlur={() => setFocusedField(null)}
+            onChange={handleChange}
+          />
+          <TextAreaField 
+            label="Message" 
+            name="message" 
+            value={values.message}
+            error={errors.message}
+            isFocused={focusedField === "message"}
+            onFocus={() => setFocusedField("message")}
+            onBlur={() => setFocusedField(null)}
+            onChange={handleChange}
+          />
 
           <motion.button
             type="submit"
             disabled={status === "loading"}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full relative overflow-hidden group rounded-2xl px-6 py-4 mt-2 text-sm font-bold text-white transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full relative overflow-hidden group rounded-xl px-6 py-4 mt-2 text-sm font-bold text-white transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             style={{
-              background: "var(--accent-gradient)",
-              boxShadow: "0 10px 30px -10px rgba(9, 144, 157, 0.5)"
+              background: "linear-gradient(135deg, #FF5404 0%, #d94500 100%)",
+              boxShadow: "0 8px 25px -8px rgba(255, 84, 4, 0.6)"
             }}
           >
             <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
-              {status === "loading" ? (
-                <><FiLoader className="animate-spin text-lg" /> TRANSMITTING...</>
-              ) : (
-                <><FiSend className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> SEND TO INBOX</>
-              )}
-            </span>
+            
+            {status === "loading" ? (
+              <><FiLoader className="animate-spin text-lg" /> SENDING...</>
+            ) : (
+              <>SEND MESSAGE <FiArrowRight className="text-lg group-hover:translate-x-1 transition-transform" /></>
+            )}
           </motion.button>
 
           <AnimatePresence>
             {status === "success" && (
-              <motion.p 
-                initial={{ opacity: 0, height: 0, marginTop: 0 }} 
-                animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+              <motion.div 
+                initial={{ opacity: 0, y: 10, height: 0 }} 
+                animate={{ opacity: 1, y: 0, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 bg-emerald-400/10 py-3 rounded-xl border border-emerald-400/20"
+                className="mt-4 flex items-center justify-center gap-2 text-xs font-medium text-emerald-400 bg-emerald-400/10 py-3 rounded-lg border border-emerald-400/20"
               >
-                <FiCheckCircle /> Message landed safely! I'll be in touch.
-              </motion.p>
+                <FiCheckCircle size={14} /> Message sent successfully! I'll get back to you soon.
+              </motion.div>
             )}
             {status === "error" && (
-              <motion.p 
-                initial={{ opacity: 0, height: 0, marginTop: 0 }} 
-                animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+              <motion.div 
+                initial={{ opacity: 0, y: 10, height: 0 }} 
+                animate={{ opacity: 1, y: 0, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="flex items-center justify-center gap-2 text-sm font-medium text-red-400 bg-red-400/10 py-3 rounded-xl border border-red-400/20"
+                className="mt-4 flex items-center justify-center gap-2 text-xs font-medium text-red-400 bg-red-400/10 py-3 rounded-lg border border-red-400/20"
               >
-                <FiAlertCircle /> Oops, signal lost. Try again in a moment.
-              </motion.p>
+                <FiAlertCircle size={14} /> Something went wrong. Please try again.
+              </motion.div>
             )}
           </AnimatePresence>
         </form>

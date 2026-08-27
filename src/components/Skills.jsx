@@ -16,9 +16,9 @@ const toolkitData = [
       { name: "Design Systems", desc: "Building scalable components", percent: "87%" },
       { name: "User Research", desc: "Understanding the why", percent: "89%" },
     ],
-    bg: "rgba(9, 144, 157, 0.08)", // primary teal
-    borderColor: "rgba(9, 144, 157, 0.4)",
-    accent: "rgba(9, 144, 157, 0.9)",
+    bg: "rgba(255, 84, 4, 0.08)", // primary teal
+    borderColor: "rgba(255, 84, 4, 0.4)",
+    accent: "rgba(255, 84, 4, 0.9)",
   },
   {
     category: "Data",
@@ -81,8 +81,8 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-24 md:py-32 overflow-hidden">
       {/* Background glowing orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#09909D]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-[#0C5660]/20 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#FF5404]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-[#FF5404]/20 blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-6xl px-6 md:px-10 relative z-10">
         <SectionHeading

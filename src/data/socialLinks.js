@@ -4,9 +4,9 @@
  * Set a value to `null` to hide that icon everywhere.
  */
 export const socialLinks = {
-  linkedin: "https://linkedin.com/in/yourusername",
-  behance: "https://behance.net/yourusername",
-  instagram: "https://instagram.com/yourusername",
-  github: "https://github.com/yourusername",
-  email: "mailto:your-email@example.com",
+  linkedin: "https://www.linkedin.com/in/nisha-rani-barman-a4787b287/",
+  behance: "https://www.behance.net/nishabarman1",
+  instagram: "https://www.instagram.com/nisha.official28?igsi=Ym15aTY0MHYyYzkz",
+  github: "https://github.com/Nisha-2812",
+  email: "mailto:barmannisha648@gmail.com",
 };

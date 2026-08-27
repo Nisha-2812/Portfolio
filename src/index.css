@@ -1,41 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #000000;
-  --bg-secondary: #14213D;
-  --surface: rgba(20, 33, 61, 0.5);
-  --surface-strong: #14213D;
-  --border-soft: rgba(229, 229, 229, 0.15);
-  --border-strong: rgba(229, 229, 229, 0.3);
-  --text-primary: #FFFFFF;
-  --text-secondary: #E5E5E5;
-  --text-tertiary: rgba(229, 229, 229, 0.5);
-  --accent-blue: #FCA311;
-  --accent-purple: #E5E5E5;
-  --accent-gradient: linear-gradient(135deg, #FCA311 0%, #14213D 100%);
+  --bg-primary: #071925;
+  --bg-secondary: #0A2233;
+  --surface: rgba(10, 34, 51, 0.5);
+  --surface-strong: #0A2233;
+  --border-soft: rgba(245, 222, 188, 0.15);
+  --border-strong: rgba(245, 222, 188, 0.3);
+  --text-primary: #F5DEBC;
+  --text-secondary: rgba(245, 222, 188, 0.8);
+  --text-tertiary: rgba(245, 222, 188, 0.5);
+  --accent-blue: #FF5404;
+  --accent-purple: #F5DEBC;
+  --accent-gradient: linear-gradient(135deg, #FF5404 0%, #071925 100%);
   --shadow-color: 0deg 0% 0%;
-  --scrollbar-track: #000000;
-  --grid-dot: rgba(252, 163, 17, 0.25);
+  --scrollbar-track: #071925;
+  --grid-dot: rgba(255, 84, 4, 0.25);
   color-scheme: dark;
 }
 
 html.light {
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #E5E5E5;
-  --surface: rgba(229, 229, 229, 0.6);
-  --surface-strong: #E5E5E5;
-  --border-soft: rgba(20, 33, 61, 0.15);
-  --border-strong: rgba(20, 33, 61, 0.3);
-  --text-primary: #000000;
-  --text-secondary: #14213D;
-  --text-tertiary: rgba(20, 33, 61, 0.6);
-  --accent-blue: #FCA311;
-  --accent-purple: #14213D;
-  --accent-gradient: linear-gradient(135deg, #FCA311 0%, #14213D 100%);
+  --bg-primary: #F5DEBC;
+  --bg-secondary: rgba(245, 222, 188, 0.8);
+  --surface: rgba(245, 222, 188, 0.6);
+  --surface-strong: rgba(245, 222, 188, 0.8);
+  --border-soft: rgba(10, 34, 51, 0.15);
+  --border-strong: rgba(10, 34, 51, 0.3);
+  --text-primary: #071925;
+  --text-secondary: #0A2233;
+
+  --text-tertiary: rgba(10, 34, 51, 0.6);
+  --accent-blue: #FF5404;
+  --accent-purple: #0A2233;
+  --accent-gradient: linear-gradient(135deg, #FF5404 0%, #071925 100%);
   --shadow-color: 0deg 0% 60%;
-  --scrollbar-track: #E5E5E5;
-  --grid-dot: rgba(252, 163, 17, 0.15);
+  --scrollbar-track: rgba(245, 222, 188, 0.8);
+  --grid-dot: rgba(255, 84, 4, 0.15);
   color-scheme: light;
+}
+
+/* Hide the dark cinematic background in light mode */
+html.light .hero-cinematic-bg {
+  display: none !important;
 }
 
 
